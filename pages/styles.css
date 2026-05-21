@@ -6,23 +6,25 @@
 
 :root {
     box-sizing: border-box;
-    --primary-color: rgb(58, 36, 70);
-    --secondary-color:rgb(108, 46, 72);
-    --complement-color: rgb(111, 75, 134);
-    --background-color: rgb(123, 103, 149);
+    --primary-color:  rgba(103,49,145,1);
+    --secondary-color: rgba(50,0,129,1);
+    --complement-color: rgb(236, 181, 92);
+    --background-color: rgb(38, 12, 76);
     --hover-background-color: rgb(187, 136, 161);
     
 }
 
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: auto;
     min-height: 100vh;
     font-size: clamp(1rem, 2vw, 2rem);
     line-height: 1.5;
-    background-image: radial-gradient(circle at top left, var(--primary-color), var(--secondary-color));
+    background-image: radial-gradient( circle farthest-corner at -5.6% -6.8%,  rgba(103,49,145,1) 37.3%, rgba(50,0,129,1) 73.5% );
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; */
 }
 
 h1 {
@@ -57,31 +59,50 @@ a {
     font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(1.5rem, 2.5vw, 2rem); 
     text-decoration: double; 
-    color: var(--secondary-color); 
+    background: var(--complement-color);
+    color: var(--primary-color);    
     transition: color 0.3s, transform 0.3s;
+    padding: 10px 20px;
+     border-radius: 5px;
+     display: inline-block;
 }
 
 a:hover {
-    color: rgb(125, 101, 101);
+    color: var(--complement-color);
+     background: var(--primary-color);
     transform: scale(1.05);
 }
 
-section {
+section, footer, .row-layout {
     padding: 50px;
     margin: 50px;
     border-radius: 10px;
-    background-color: var(--background-color); /* starting color */
+    background-color: white; 
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     transform: scale(1);
     transition: 
         background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
         transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
-section:hover {
-   background-color: rgb(187, 136, 161); 
-    transform: scale(1.02); 
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+
+.row-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
-body {
-    background-color: var(--background-color)
+
+section:hover, footer:hover {
+   background-color: var(--hover-background-color); 
+   transform: scale(1.02); 
+   box-shadow: 4px 8px 16px rgba(37, 6, 71, 0.8);
+}
+
+
+footer {
+    flex-direction: column;
+    text-align: center;
+    color: var(--complement-color);
+    font-size: clamp(1rem, 2vw, 1.5rem);
 }
