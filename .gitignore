@@ -1,0 +1,3 @@
+# gitignore for hagerbahar.github.io project
+.vscode
+.DS_Store
